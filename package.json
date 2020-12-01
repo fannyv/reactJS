@@ -1,7 +1,8 @@
 {
-  "name": "reactjs",
+  "name": "fannytest",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -9,9 +10,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4",
     "@emotion/styled": "^11.0.0",
-    "@emotion/react": "^11.1.1"
+    "@emotion/react": "^11.1.1",
+    "typescript": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

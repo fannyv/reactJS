@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React from "react";
+
 
 const Header = styled.div`
   background-color: #282c34;
