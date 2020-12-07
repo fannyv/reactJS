@@ -1,9 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button} from "react-bootstrap";
 
-const buttonClick = () => {
-    alert("Test on click!");
-};
 
 const header = {
     backgroundColor: '#282c34',
@@ -28,9 +25,14 @@ const buttonStyled = {
 };
 
 export const App = () => {
+    const [count, setCount] = useState(0);
+
     return <div>
         <div style={header}>Test Header</div>
-        <Button style={buttonStyled} onClick={buttonClick}>Fanny</Button>
+        <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Fanny</Button>
+        <div style={{height: '10%', backgroundColor: 'gray'}}>
+            Vous avez cliqué {count} fois
+        </div>
     </div>;
 }
 export default App;
