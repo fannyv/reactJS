@@ -17,11 +17,10 @@ const buttonStyled = {
     backgroundColor: 'hotpink',
     fontSize: '24px',
     borderRadius: '4px',
-    color: 'black'
-
-    /*   &:hover {
-   color: white;
-    }*/
+    color: 'black',
+    "&:hover": {
+        color: 'white'
+    }
 };
 
 export const App = () => {
