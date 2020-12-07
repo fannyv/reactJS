@@ -19,9 +19,23 @@ const buttonStyled = {
     borderRadius: '4px',
     color: 'black',
     "&:hover": {
-        color: 'white'
+        background: "#efefef"
     }
 };
+
+const button = {
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '4px',
+    background: '#1890ff',
+    color: '#fff',
+    fontSize: '14px',
+    cursor: 'pointer',
+    '&:hover': {
+        background: 'red'
+    }
+};
+
 
 export const App = () => {
     const [count, setCount] = useState(0);
@@ -29,6 +43,7 @@ export const App = () => {
     return <div>
         <div style={header}>Test Header</div>
         <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Fanny</Button>
+        <button style={button}>Button with hover</button>
         <div style={{height: '10%', backgroundColor: 'gray'}}>
             Vous avez cliqué {count} fois
         </div>
