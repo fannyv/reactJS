@@ -57,6 +57,7 @@ const centerStyled = {
 
 export const App = () => {
     const [count, setCount] = useState(0);
+    const [name, setName] = useState('Fanny');
 
     return <div>
         <div style={header}>Test Header</div>
@@ -66,6 +67,10 @@ export const App = () => {
         <div style={centerStyled}>
             <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
         </div>
+        <label>
+            Name:
+            <input type="text" value={name} onChange={() => setName}/>
+        </label>
     </div>;
 }
 export default App;
