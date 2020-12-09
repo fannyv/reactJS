@@ -36,6 +36,24 @@ const button = {
     }
 };
 
+const buttonClickedStyled = {
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '4px',
+    background: '#1890ff',
+    color: '#fff',
+    fontSize: '14px',
+    cursor: 'default',
+    width: '100px',
+    height: '50px'
+};
+
+const centerStyled = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+};
+
 
 export const App = () => {
     const [count, setCount] = useState(0);
@@ -44,8 +62,9 @@ export const App = () => {
         <div style={header}>Test Header</div>
         <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Fanny</Button>
         <button style={button}>Button with hover</button>
-        <div style={{height: '10%', backgroundColor: 'gray'}}>
-            Vous avez cliqué {count} fois
+        <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
+        <div style={centerStyled}>
+            <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
         </div>
     </div>;
 }
