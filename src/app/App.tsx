@@ -1,4 +1,4 @@
-import React, {FormEvent, useState} from "react";
+import React, {ChangeEvent, FormEvent, useState} from "react";
 import {Button} from "react-bootstrap";
 
 
@@ -11,6 +11,9 @@ const header = {
     color: 'white'
 };
 
+const containerStyled = {
+    display: 'flex'
+};
 
 const buttonStyled = {
     padding: '32px',
@@ -20,19 +23,6 @@ const buttonStyled = {
     color: 'black',
     "&:hover": {
         background: "#efefef"
-    }
-};
-
-const button = {
-    padding: '10px 20px',
-    border: 'none',
-    borderRadius: '4px',
-    background: '#1890ff',
-    color: '#fff',
-    fontSize: '14px',
-    cursor: 'pointer',
-    '&:hover': {
-        background: 'red'
     }
 };
 
@@ -59,27 +49,31 @@ export const App = () => {
     const [name, setName] = useState('Fanny');
 
     const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-        console.log(event);
+        alert("has been submit");
     }
 
-    const onClick = () => {
-        alert(name + "has been click");
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setName(event.target.value);
     }
 
     return <div>
         <form onSubmit={onSubmit}>
             <div style={header}>Test Header</div>
-            <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Fanny</Button>
-            <button style={button}>Button with hover</button>
-            <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
-            <div style={centerStyled}>
-                <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
+            <div style={containerStyled}>
+                <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Click me !</Button>
+                <div style={centerStyled}>
+                    <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
+                </div>
             </div>
+            <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
+
             <label>
                 Name:
-                <input type="text" onChange={() => setName}/>
-                <button onClick={onClick}>Valider Nom</button>
+                <input type="text" onChange={onChange}/>
+                <input type="submit" value="Envoyer"/>
             </label>
+
+            <h1>Bonjour, {name}</h1>
         </form>
     </div>;
 }
