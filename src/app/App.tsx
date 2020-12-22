@@ -47,6 +47,7 @@ const centerStyled = {
 export const App = () => {
     const [count, setCount] = useState(0);
     const [name, setName] = useState('Fanny');
+    const [fragrance, setFragrance] = useState('Pamplemousse');
 
     const onSubmit = (event: FormEvent<HTMLFormElement>) => {
         alert("has been submit");
@@ -54,6 +55,15 @@ export const App = () => {
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
+    }
+
+    const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        setFragrance(event.target.value);
+    }
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        alert('Votre parfum favori est : ' + fragrance);
+        event.preventDefault();
     }
 
     return <div>
@@ -75,6 +85,27 @@ export const App = () => {
 
             <h1>Bonjour, {name}</h1>
         </form>
+
+        <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
+
+        <form onSubmit={handleSubmit}>
+            <label>
+                Choisissez votre parfum favori :
+                <select value={fragrance} onChange={handleChange}>
+                    <option value="Pamplemousse">Pamplemousse</option>
+                    <option value="Citron vert">Citron vert</option>
+                    <option value="Noix de coco">Noix de coco</option>
+                    <option value="Mangue">Mangue</option>
+                </select>
+            </label>
+            <input type="submit" value="Envoyer"/>
+        </form>
+        <select multiple={true} value={['B', 'C']}>
+            <option value="A">a</option>
+            <option value="B">b</option>
+            <option value="C">c</option>
+            <option value="d">d</option>
+        </select>
     </div>;
 }
 export default App;
