@@ -100,6 +100,23 @@ export const App = () => {
             <option value="Leroy Merlin">Leroy Merlin</option>
             <option value="Brico Depot">Brico Depot</option>
         </select>
+
+        <div style={{height: '10%', backgroundColor: 'gray'}}>Inscription d'un utilisateur</div>
+        <form>
+            <label>
+                Nom:
+                <input type={"text"} name={"username"}/>
+            </label>
+            <label>
+                Mot de passe:
+                <input type={"password"} name={"password"}/>
+            </label>
+            <label>
+                Confirmation mot de passe:
+                <input type={"password"} name={"passwordConfirmation"}/>
+            </label>
+            <input type="submit" value="Inscription"/>
+        </form>
     </div>;
 }
 export default App;
