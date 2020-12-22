@@ -49,10 +49,6 @@ export const App = () => {
     const [name, setName] = useState('Fanny');
     const [fragrance, setFragrance] = useState('Pamplemousse');
 
-    const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-        alert("has been submit");
-    }
-
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
     }
@@ -67,24 +63,22 @@ export const App = () => {
     }
 
     return <div>
-        <form onSubmit={onSubmit}>
-            <div style={header}>Test Header</div>
-            <div style={containerStyled}>
-                <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Click me !</Button>
-                <div style={centerStyled}>
-                    <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
-                </div>
+        <div style={header}>Test Header</div>
+        <div style={containerStyled}>
+            <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Click me !</Button>
+            <div style={centerStyled}>
+                <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
             </div>
-            <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
+        </div>
+        <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
 
-            <label>
-                Name:
-                <input type="text" onChange={onChange}/>
-                <input type="submit" value="Envoyer"/>
-            </label>
+        <label>
+            Name:
+            <input type="text" onChange={onChange}/>
+            <input type="submit" value="Envoyer"/>
+        </label>
 
-            <h1>Bonjour, {name}</h1>
-        </form>
+        <h1>Bonjour, {name}</h1>
 
         <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
 
