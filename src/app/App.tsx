@@ -100,11 +100,11 @@ export const App = () => {
             </label>
             <input type="submit" value="Envoyer"/>
         </form>
-        <select multiple={true} value={['B', 'C']}>
-            <option value="A">a</option>
-            <option value="B">b</option>
-            <option value="C">c</option>
-            <option value="d">d</option>
+        <select multiple={true}>
+            <option value="Ikea">Ikea</option>
+            <option value="Castorama">Castorama</option>
+            <option value="Leroy Merlin">Leroy Merlin</option>
+            <option value="Brico Depot">Brico Depot</option>
         </select>
     </div>;
 }
