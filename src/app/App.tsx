@@ -57,7 +57,6 @@ const centerStyled = {
 export const App = () => {
     const [count, setCount] = useState(0);
     const [name, setName] = useState('Fanny');
-    const [formData, setFormData] = useState({email: "", password: ""})
 
     const onSubmit = (event: FormEvent<HTMLFormElement>) => {
         console.log(event);
