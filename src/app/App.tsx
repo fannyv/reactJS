@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {FormEvent, useState} from "react";
 import {Button} from "react-bootstrap";
 
 
@@ -54,23 +54,34 @@ const centerStyled = {
     justifyContent: 'center'
 };
 
-
 export const App = () => {
     const [count, setCount] = useState(0);
     const [name, setName] = useState('Fanny');
+    const [formData, setFormData] = useState({email: "", password: ""})
+
+    const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+        console.log(event);
+    }
+
+    const onClick = () => {
+        alert(name + "has been click");
+    }
 
     return <div>
-        <div style={header}>Test Header</div>
-        <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Fanny</Button>
-        <button style={button}>Button with hover</button>
-        <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
-        <div style={centerStyled}>
-            <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
-        </div>
-        <label>
-            Name:
-            <input type="text" value={name} onChange={() => setName}/>
-        </label>
+        <form onSubmit={onSubmit}>
+            <div style={header}>Test Header</div>
+            <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Fanny</Button>
+            <button style={button}>Button with hover</button>
+            <div style={{height: '10%', backgroundColor: 'gray'}}> in line css</div>
+            <div style={centerStyled}>
+                <div style={buttonClickedStyled}> Vous avez cliqué {count} fois</div>
+            </div>
+            <label>
+                Name:
+                <input type="text" onChange={() => setName}/>
+                <button onClick={onClick}>Valider Nom</button>
+            </label>
+        </form>
     </div>;
 }
 export default App;
