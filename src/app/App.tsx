@@ -174,7 +174,6 @@ export const App = () => {
             <textarea name={"column"} cols={10} rows={5}>Zone de commentaire pour l'utilisateur </textarea>
         </div>
 
-
     </div>;
 }
 export default App;
