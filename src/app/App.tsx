@@ -44,6 +44,44 @@ const centerStyled = {
     justifyContent: 'center'
 };
 
+const formulaireLabel = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '10%',
+    backgroundColor: 'gray'
+}
+
+const formulaireContainer = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+}
+
+const formulaireContent = {
+    border: '2px solid cornflowerblue',
+    padding: '3px',
+    display: 'flex',
+    flexDirection: "column"
+}
+
+const rowForm = {
+    margin: "1px",
+    display: 'flex',
+}
+
+const inputStyle = {
+    flexGrow: 1,
+    border: 'none',
+    borderBottom: '2px solid lightblue'
+}
+
+const submitInput = {
+    backgroundColor: 'lightblue',
+    borderColor: 'cornflowerblue',
+    marginTop: "15px"
+}
+
 export const App = () => {
     const [count, setCount] = useState(0);
     const [name, setName] = useState('Fanny');
@@ -64,6 +102,36 @@ export const App = () => {
 
     return <div>
         <div style={header}>Test Header</div>
+        <div style={formulaireLabel}>Inscription d'un utilisateur</div>
+        <form style={formulaireContainer}>
+            <div style={formulaireContent as React.CSSProperties}>
+                <p style={{color: "lightblue", fontWeight: "bold"}}>Vous : </p>
+                <p style={rowForm}>
+                    <label>Nom:</label>
+                    <input type={"text"} name={"username"} style={inputStyle}/>
+                </p>
+                <p style={rowForm}>
+                    <label>Prénom:</label>
+                    <input type={"text"} name={"firstName"} style={inputStyle}/>
+                </p>
+                <p style={rowForm}>
+                    <label>Email:</label>
+                    <input type={"email"} name={"email"} style={inputStyle}/>
+                </p>
+                <p style={rowForm}>
+                    <label> Mot de passe:</label>
+                    <input type={"password"} name={"password"} style={inputStyle}/>
+                </p>
+                <p style={rowForm}>
+                    <label>
+                        Confirmation mot de passe:
+                        <input type={"password"} name={"passwordConfirmation"} style={inputStyle}/>
+                    </label>
+                </p>
+                <input type="submit" value="Inscription" style={submitInput}/>
+            </div>
+        </form>
+
         <div style={containerStyled}>
             <Button style={buttonStyled} onClick={() => setCount(count + 1)}>Click me !</Button>
             <div style={centerStyled}>
@@ -101,22 +169,12 @@ export const App = () => {
             <option value="Brico Depot">Brico Depot</option>
         </select>
 
-        <div style={{height: '10%', backgroundColor: 'gray'}}>Inscription d'un utilisateur</div>
-        <form>
-            <label>
-                Nom:
-                <input type={"text"} name={"username"}/>
-            </label>
-            <label>
-                Mot de passe:
-                <input type={"password"} name={"password"}/>
-            </label>
-            <label>
-                Confirmation mot de passe:
-                <input type={"password"} name={"passwordConfirmation"}/>
-            </label>
-            <input type="submit" value="Inscription"/>
-        </form>
+        <div>
+            <p><label>Un commentaire ?</label></p>
+            <textarea name={"column"} cols={10} rows={5}>Zone de commentaire pour l'utilisateur </textarea>
+        </div>
+
+
     </div>;
 }
 export default App;
